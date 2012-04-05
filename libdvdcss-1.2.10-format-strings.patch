@@ -1,0 +1,11 @@
+--- libdvdcss-1.2.10/src/libdvdcss.c~	2008-08-29 20:41:51.000000000 +0200
++++ libdvdcss-1.2.10/src/libdvdcss.c	2009-08-30 02:08:46.038526446 +0200
+@@ -532,7 +532,7 @@
+ 
+         sprintf( psz_debug, "using CSS key cache dir: %s",
+                             dvdcss->psz_cachefile );
+-        print_debug( dvdcss, psz_debug );
++        print_debug( dvdcss, "%s", psz_debug );
+     }
+     nocache:
+ 
