@@ -1,21 +1,18 @@
-%define name 	libdvdcss
-%define version	1.2.10
 %define distsuffix plf
-%define release	%mkrel 3
-%define major  	2
+
+%define major 2
 %define libname %mklibname dvdcss %{major}
 %define develname %mklibname -d dvdcss
 
-Name:		%{name}
-Version:	%{version}
-Release:	%{release}
+Name:		libdvdcss
+Version:	1.2.10
+Release:	%mkrel 3
 Summary:	Library for accessing DVDs like block device usind deCSS if needed
+Group:		System/Libraries
+License:	GPLv2+
+URL:		http://www.videolan.org/libdvdcss
 Source:		%{name}-%{version}.tar.bz2
 Patch:		libdvdcss-1.2.10-format-strings.patch
-License:	GPLv2+
-Group:		System/Libraries
-URL:		http://www.videolan.org/libdvdcss
-BuildRoot:	%{_tmppath}/%{name}-%{version}-buildroot
 Conflicts:	libdvdcss0.0.1
 Conflicts:	libdvdcss0.0.2
 
@@ -35,9 +32,9 @@ without having to bother about the decryption. The important features are:
 This package is in restricted as it violates patents.
 
 %package -n %{libname}
-Summary:        A library for accessing DVDs like block device usind deCSS if needed
-Group:          System/Libraries
-Provides:       %{name} = %{version}-%{release}
+Summary:	A library for accessing DVDs like block device usind deCSS if needed
+Group:		System/Libraries
+Provides:	%{name} = %{version}-%{release}
 
 %description -n %{libname}
 libdvdcss is a simple library designed for accessing DVDs like a block device
@@ -53,17 +50,16 @@ without having to bother about the decryption. The important features are:
    region of your drive to be set.
 
 %package -n %{develname}
-Summary:        Development tools for programs which will use the %{name} library
-Group:          Development/C
+Summary:	Development tools for programs which will use the %{name} library
+Group:		Development/C
 Requires:	%{libname} = %{version}
-Provides:       %{name}-devel = %{version}-%{release}
-Obsoletes: %mklibname -d dvdcss 2
- 
+Provides:	%{name}-devel = %{version}-%{release}
+
 %description -n %{develname}
 The %{name}-devel package includes the header files and static libraries
 necessary for developing programs which will manipulate DVDs files using
 the %{name} library.
- 
+
 If you are going to develop programs which will manipulate DVDs, you
 should install %{name}-devel.  You'll also need to have the %{name}
 package installed.
@@ -73,34 +69,23 @@ package installed.
 %patch -p1
 
 %build
-%if %mdkversion <= 1000
-%define __libtoolize true
-%endif
 %configure2_5x
 %make
 
 %install
-rm -rf %{buildroot}
+%__rm -rf %{buildroot}
 %makeinstall_std
 
 %clean
-rm -rf %{buildroot}
-
-%if %mdkversion < 200900
-%post -n %{lib_name} -p /sbin/ldconfig
-%postun -n %{lib_name} -p /sbin/ldconfig
-%endif
+%__rm -rf %{buildroot}
 
 %files -n %{libname}
-%defattr(-,root,root)
 %doc AUTHORS COPYING
 %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
-%defattr(-,root,root)
 %doc ChangeLog COPYING
-%{_libdir}/*.a
-%{_libdir}/*.la
+%{_libdir}/*.*a
 %{_libdir}/*.so
 %{_includedir}/*
 %{_libdir}/pkgconfig/*.pc
