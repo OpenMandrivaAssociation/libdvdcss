@@ -67,7 +67,7 @@ package installed.
 %setup -q
 
 %build
-%configure2_5x
+%configure
 %make
 
 %install
@@ -79,7 +79,6 @@ package installed.
 %files -n %{develname}
 %doc ChangeLog COPYING
 %doc %{_docdir}/%{name}
-%{_libdir}/*.*a
 %{_libdir}/*.so
 %{_includedir}/*
 %{_libdir}/pkgconfig/*.pc
