@@ -6,7 +6,7 @@
 
 Name:		libdvdcss
 Version:	1.2.13
-Release:	4
+Release:	5
 Summary:	Library for accessing DVDs like block device usind deCSS if needed
 Group:		System/Libraries
 License:	GPLv2+
