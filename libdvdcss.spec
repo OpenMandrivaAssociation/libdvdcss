@@ -11,7 +11,7 @@ Summary:	Library for accessing DVDs like block device usind deCSS if needed
 Group:		System/Libraries
 License:	GPLv2+
 URL:		http://www.videolan.org/libdvdcss
-Source:		http://download.videolan.org/pub/libdvdcss/%{version}/{name}-%{version}.tar.bz2
+Source:		http://download.videolan.org/pub/libdvdcss/%{version}/%{name}-%{version}.tar.bz2
 Conflicts:	libdvdcss0.0.1
 Conflicts:	libdvdcss0.0.2
 
