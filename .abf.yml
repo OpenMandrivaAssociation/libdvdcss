@@ -1,2 +1,4 @@
-sources:
+removed_sources:
   libdvdcss-1.2.13.tar.bz2: 1a4a5e55c7529da46386c1c333340eee2c325a77
+sources:
+  libdvdcss-1.4.0.tar.bz2: 4872a7c7e5c170c6c1787573b2f900b36a1ba974
