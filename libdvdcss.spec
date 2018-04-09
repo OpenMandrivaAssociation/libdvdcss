@@ -5,7 +5,7 @@
 %define develname %mklibname -d dvdcss
 
 Name:		libdvdcss
-Version:	1.4.1
+Version:	1.4.2
 Release:	1
 Summary:	Library for accessing DVDs like block device usind deCSS if needed
 Group:		System/Libraries
