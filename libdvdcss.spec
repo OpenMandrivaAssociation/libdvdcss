@@ -5,7 +5,7 @@
 %define develname %mklibname -d dvdcss
 
 Name:		libdvdcss
-Version:	1.4.2
+Version:	1.4.3
 Release:	1
 Summary:	Library for accessing DVDs like block device usind deCSS if needed
 Group:		System/Libraries
@@ -68,10 +68,10 @@ package installed.
 
 %build
 %configure
-%make
+%make_build
 
 %install
-%makeinstall_std
+%make_install
 
 %files -n %{libname}
 %{_libdir}/*.so.%{major}*
@@ -82,4 +82,3 @@ package installed.
 %{_libdir}/*.so
 %{_includedir}/*
 %{_libdir}/pkgconfig/*.pc
-
