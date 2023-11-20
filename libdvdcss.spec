@@ -1,12 +1,13 @@
 %define distsuffix plf
 
 %define major 2
-%define libname %mklibname dvdcss %{major}
+%define oldlibname %mklibname dvdcss 2
+%define libname %mklibname dvdcss
 %define develname %mklibname -d dvdcss
 
 Name:		libdvdcss
 Version:	1.4.3
-Release:	1
+Release:	2
 Summary:	Library for accessing DVDs like block device usind deCSS if needed
 Group:		System/Libraries
 License:	GPLv2+
@@ -34,6 +35,7 @@ This package is in restricted as it violates patents.
 Summary:	A library for accessing DVDs like block device usind deCSS if needed
 Group:		System/Libraries
 Provides:	%{name} = %{version}-%{release}
+%rename %{oldlibname}
 
 %description -n %{libname}
 libdvdcss is a simple library designed for accessing DVDs like a block device
@@ -64,21 +66,21 @@ should install %{name}-devel.  You'll also need to have the %{name}
 package installed.
 
 %prep
-%setup -q
+%autosetup -p1
+%configure
 
 %build
-%configure
 %make_build
 
 %install
 %make_install
 
 %files -n %{libname}
+%{_libdir}/*.so
 %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
 %doc ChangeLog COPYING
 %doc %{_docdir}/%{name}
-%{_libdir}/*.so
 %{_includedir}/*
 %{_libdir}/pkgconfig/*.pc
