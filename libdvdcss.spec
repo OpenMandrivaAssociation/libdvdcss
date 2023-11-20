@@ -7,7 +7,7 @@
 
 Name:		libdvdcss
 Version:	1.4.3
-Release:	2
+Release:	3
 Summary:	Library for accessing DVDs like block device usind deCSS if needed
 Group:		System/Libraries
 License:	GPLv2+
@@ -15,6 +15,7 @@ URL:		http://www.videolan.org/libdvdcss
 Source:		http://download.videolan.org/pub/libdvdcss/%{version}/%{name}-%{version}.tar.bz2
 Conflicts:	libdvdcss0.0.1
 Conflicts:	libdvdcss0.0.2
+Supplements:	%mklibname dvdread
 
 %description
 libdvdcss is a simple library designed for accessing DVDs like a block device
