@@ -14,9 +14,11 @@ License:	GPLv2+
 URL:		https://www.videolan.org/libdvdcss
 Source0:   https://code.videolan.org/videolan/libdvdcss/-/archive/%{version}/libdvdcss-%{version}.tar.bz2
 #Source:		http://download.videolan.org/pub/libdvdcss/%{version}/%{name}-%{version}.tar.bz2
+BuildRequires: meson
 Conflicts:	libdvdcss0.0.1
 Conflicts:	libdvdcss0.0.2
 Supplements:	%mklibname dvdread
+
 
 %description
 libdvdcss is a simple library designed for accessing DVDs like a block device
@@ -69,13 +71,13 @@ package installed.
 
 %prep
 %autosetup -p1
-%configure
+%meson
 
 %build
-%make_build
+%meson_build
 
 %install
-%make_install
+%meson_install
 
 %files -n %{libname}
 %{_libdir}/*.so
