@@ -84,7 +84,7 @@ package installed.
 %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
-%doc ChangeLog COPYING
+%doc COPYING
 %doc %{_docdir}/%{name}
 %{_includedir}/*
 %{_libdir}/pkgconfig/*.pc
