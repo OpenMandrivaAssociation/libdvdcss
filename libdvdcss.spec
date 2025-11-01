@@ -6,13 +6,14 @@
 %define develname %mklibname -d dvdcss
 
 Name:		libdvdcss
-Version:	1.4.3
-Release:	3
+Version:	1.5.0
+Release:	1
 Summary:	Library for accessing DVDs like block device usind deCSS if needed
 Group:		System/Libraries
 License:	GPLv2+
 URL:		https://www.videolan.org/libdvdcss
-Source:		http://download.videolan.org/pub/libdvdcss/%{version}/%{name}-%{version}.tar.bz2
+Source0:   https://code.videolan.org/videolan/libdvdcss/-/archive/%{version}/libdvdcss-%{version}.tar.bz2
+#Source:		http://download.videolan.org/pub/libdvdcss/%{version}/%{name}-%{version}.tar.bz2
 Conflicts:	libdvdcss0.0.1
 Conflicts:	libdvdcss0.0.2
 Supplements:	%mklibname dvdread
