@@ -78,13 +78,16 @@ package installed.
 
 %install
 %meson_install
+# remove not wanted
+rm -f %{buildroot}/%{_libdir}/libdvdcss.a
 
 %files -n %{libname}
-%{_libdir}/*.so
+
 %{_libdir}/*.so.%{major}*
 
 %files -n %{develname}
 %doc COPYING
 %doc %{_docdir}/%{name}
 %{_includedir}/*
+%{_libdir}/*.so
 %{_libdir}/pkgconfig/*.pc
